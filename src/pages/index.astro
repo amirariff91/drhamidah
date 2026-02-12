@@ -1,0 +1,254 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Dr. Hamidah Che Abdul Hamid",
+  "jobTitle": "Education Leader & Researcher",
+  "description": "30 years transforming Malaysian schools. Headteacher of 4 primary schools managing up to 1,700 students. PhD researcher in educational leadership and resilience.",
+  "url": "https://drhamidah.cepathosting.com",
+  "email": "hamidahcheabdulhamid5678@gmail.com",
+  "telephone": "+60129621017",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kota Bharu",
+    "addressRegion": "Kelantan",
+    "addressCountry": "MY"
+  },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Universiti Sultan Zainal Abidin (UniSZA)" },
+    { "@type": "CollegeOrUniversity", "name": "Universiti Teknologi MARA (UiTM)" },
+    { "@type": "CollegeOrUniversity", "name": "Universiti Putra Malaysia (UPM)" }
+  ],
+  "award": [
+    "National-Level PIBG Excellence Award 2016",
+    "State STEM Principal Award 2018",
+    "State DUTA Award 2021 & 2022",
+    "Ahli Setia Mahkota Kelantan (A.S.K.)"
+  ],
+  "knowsAbout": [
+    "Educational Leadership",
+    "School Resilience",
+    "Primary Education",
+    "STEM Education",
+    "Digital Transformation in Schools"
+  ],
+  "sameAs": [
+    "https://journal.unisza.edu.my/jmtp/index.php/jmtp/article/view/221",
+    "https://www.academia.edu/106024754/"
+  ]
+};
+---
+
+<BaseLayout
+  title="Dr. Hamidah Che Abdul Hamid — Education Leader & Researcher | Malaysia"
+  description="30 years transforming Malaysian schools. Headteacher managing 1,700+ students at a High-Performance School (SBT). PhD researcher in educational leadership and resilience."
+  jsonLd={jsonLd}
+>
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 text-white overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-20 right-20 w-72 h-72 bg-gold-400 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 left-10 w-96 h-96 bg-sage-400 rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
+      <div class="max-w-3xl">
+        <p class="text-gold-400 font-medium text-sm uppercase tracking-widest mb-4">Education Leader · Researcher · School Transformation Expert</p>
+        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+          Dr. Hamidah<br />Che Abdul Hamid
+        </h1>
+        <p class="text-xl sm:text-2xl text-navy-200 leading-relaxed mb-4">
+          30 years of transforming Malaysian schools — from a rural school of 250 students to leading one of Kelantan's largest High-Performance Schools with <strong class="text-white">1,700 students</strong>.
+        </p>
+        <p class="text-lg text-navy-300 mb-8">
+          PhD researcher in educational leadership and resilience. Published author. Now ready for the next chapter.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/contact" class="inline-flex items-center justify-center px-6 py-3 bg-gold-500 hover:bg-gold-600 text-navy-900 font-semibold rounded-lg transition-colors text-center">
+            Discuss an Opportunity →
+          </a>
+          <a href="/portfolio" class="inline-flex items-center justify-center px-6 py-3 border-2 border-navy-400 hover:border-white text-white font-medium rounded-lg transition-colors text-center">
+            View Portfolio
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Numbers -->
+  <section class="bg-white py-16 border-b border-navy-100">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <p class="text-4xl font-bold text-navy-900 font-serif">30</p>
+          <p class="text-sm text-navy-500 mt-1">Years in Education</p>
+        </div>
+        <div>
+          <p class="text-4xl font-bold text-navy-900 font-serif">4</p>
+          <p class="text-sm text-navy-500 mt-1">Schools Led</p>
+        </div>
+        <div>
+          <p class="text-4xl font-bold text-navy-900 font-serif">1,700</p>
+          <p class="text-sm text-navy-500 mt-1">Students (Current School)</p>
+        </div>
+        <div>
+          <p class="text-4xl font-bold text-navy-900 font-serif">300%</p>
+          <p class="text-sm text-navy-500 mt-1">UPSR Improvement (SK Islah)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Career Highlights -->
+  <section class="py-16 sm:py-20 bg-navy-50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-serif text-3xl font-bold text-navy-900 mb-4 text-center">A Career of Scaling Excellence</h2>
+      <p class="text-navy-600 text-center max-w-2xl mx-auto mb-12">From leading a small rural school in Kuala Krai to commanding one of Kelantan's premier High-Performance Schools — a trajectory of consistent growth.</p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- School 1 -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-navy-100 hover:shadow-md transition-shadow">
+          <div class="flex items-start justify-between mb-3">
+            <span class="text-xs font-medium text-navy-400 uppercase tracking-wider">2024 – Present</span>
+            <span class="bg-gold-100 text-gold-700 text-xs font-bold px-2 py-1 rounded">Current</span>
+          </div>
+          <h3 class="font-serif text-lg font-bold text-navy-900 mb-1">SK Kubang Kerian 3 (SBT)</h3>
+          <p class="text-sm text-navy-500 mb-3">Kota Bharu · 1,700 students · 131 staff</p>
+          <p class="text-sm text-navy-600">Leading one of Kelantan's largest primary schools with the prestigious <strong>Sekolah Berprestasi Tinggi</strong> (High-Performance School) designation.</p>
+        </div>
+
+        <!-- School 2 -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-navy-100 hover:shadow-md transition-shadow">
+          <div class="flex items-start justify-between mb-3">
+            <span class="text-xs font-medium text-navy-400 uppercase tracking-wider">2018 – 2024</span>
+          </div>
+          <h3 class="font-serif text-lg font-bold text-navy-900 mb-1">SK Datu' Hashim</h3>
+          <p class="text-sm text-navy-500 mb-3">Kota Bharu · 1,400 students · 115 staff</p>
+          <p class="text-sm text-navy-600">Won the <strong>DUTA Award</strong> (Digital Technology Utilisation) at state level in both 2021 and 2022 for digital transformation.</p>
+        </div>
+
+        <!-- School 3 -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-navy-100 hover:shadow-md transition-shadow">
+          <div class="flex items-start justify-between mb-3">
+            <span class="text-xs font-medium text-navy-400 uppercase tracking-wider">2016 – 2018</span>
+            <span class="bg-sage-100 text-sage-700 text-xs font-bold px-2 py-1 rounded">300% Growth</span>
+          </div>
+          <h3 class="font-serif text-lg font-bold text-navy-900 mb-1">SK Islah</h3>
+          <p class="text-sm text-navy-500 mb-3">Kota Bharu · 1,400 students · 115 staff</p>
+          <p class="text-sm text-navy-600">Drove UPSR straight-A students from 3 to 12 in just two years. Won <strong>State STEM Principal Award 2018</strong>.</p>
+        </div>
+
+        <!-- School 4 -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-navy-100 hover:shadow-md transition-shadow">
+          <div class="flex items-start justify-between mb-3">
+            <span class="text-xs font-medium text-navy-400 uppercase tracking-wider">2014 – 2016</span>
+            <span class="bg-gold-100 text-gold-700 text-xs font-bold px-2 py-1 rounded">National Award</span>
+          </div>
+          <h3 class="font-serif text-lg font-bold text-navy-900 mb-1">SK Temalir</h3>
+          <p class="text-sm text-navy-500 mb-3">Kuala Krai · 250 students · 35 staff</p>
+          <p class="text-sm text-navy-600">First headteacher posting. Won <strong>National-Level PIBG Excellence Award 2016</strong> for exceptional parent-community engagement.</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="/portfolio" class="inline-flex items-center text-navy-700 font-medium hover:text-gold-600 transition-colors">
+          See Full Portfolio →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Teaser -->
+  <section class="py-16 sm:py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="md:flex md:items-start md:gap-12">
+        <div class="md:w-1/2 mb-8 md:mb-0">
+          <h2 class="font-serif text-3xl font-bold text-navy-900 mb-4">Published Researcher in Educational Resilience</h2>
+          <p class="text-navy-600 leading-relaxed mb-4">
+            Her PhD research at UniSZA explores how headteachers in Malaysia's high-performing schools build and sustain resilience — turning adversity into school-wide strength.
+          </p>
+          <p class="text-navy-600 leading-relaxed mb-6">
+            With 3 published papers and a PhD viva passed in December 2025, Dr. Hamidah bridges the gap between academic theory and real-world school leadership.
+          </p>
+          <a href="/research" class="inline-flex items-center text-navy-700 font-medium hover:text-gold-600 transition-colors">
+            View Publications →
+          </a>
+        </div>
+        <div class="md:w-1/2">
+          <div class="bg-navy-50 rounded-xl p-6 border border-navy-100">
+            <h3 class="font-serif text-lg font-bold text-navy-900 mb-3">Featured Paper</h3>
+            <p class="text-sm text-navy-700 font-medium mb-2">"Modelling Resilient Educational Leaders for Resilient Schools: Malaysian High Performing Primary School Head Teachers"</p>
+            <p class="text-xs text-navy-500 mb-4">Journal of Management Theory and Practice (JMTP), UniSZA, 2022</p>
+            <p class="text-sm text-navy-600 mb-4">Explores how high-performing headteachers develop resilience during adversity, including the COVID-19 pandemic, through semi-structured interviews with 7 headteachers and 2 education experts across Malaysia.</p>
+            <a href="https://doi.org/10.37231/jmtp.2022.3.2.221" target="_blank" rel="noopener" class="text-sm text-gold-600 hover:text-gold-700 font-medium">Read Paper →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Awards -->
+  <section class="py-16 sm:py-20 bg-gradient-to-b from-navy-50 to-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-serif text-3xl font-bold text-navy-900 mb-10 text-center">Awards & Recognition</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="flex items-start gap-3 bg-white rounded-lg p-4 border border-navy-100">
+          <span class="text-2xl">🏆</span>
+          <div>
+            <p class="font-semibold text-navy-900 text-sm">National PIBG Excellence</p>
+            <p class="text-xs text-navy-500">2016 · National Level</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 bg-white rounded-lg p-4 border border-navy-100">
+          <span class="text-2xl">🔬</span>
+          <div>
+            <p class="font-semibold text-navy-900 text-sm">STEM Principal Award</p>
+            <p class="text-xs text-navy-500">2018 · State Level</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 bg-white rounded-lg p-4 border border-navy-100">
+          <span class="text-2xl">💻</span>
+          <div>
+            <p class="font-semibold text-navy-900 text-sm">DUTA Digital Award</p>
+            <p class="text-xs text-navy-500">2021 & 2022 · State Level</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 bg-white rounded-lg p-4 border border-navy-100">
+          <span class="text-2xl">🎖️</span>
+          <div>
+            <p class="font-semibold text-navy-900 text-sm">A.S.K. State Honour</p>
+            <p class="text-xs text-navy-500">Ahli Setia Mahkota Kelantan</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 bg-white rounded-lg p-4 border border-navy-100">
+          <span class="text-2xl">⭐</span>
+          <div>
+            <p class="font-semibold text-navy-900 text-sm">Excellent Service Awards</p>
+            <p class="text-xs text-navy-500">2000, 2007, 2018, 2025</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 bg-white rounded-lg p-4 border border-navy-100">
+          <span class="text-2xl">🎓</span>
+          <div>
+            <p class="font-semibold text-navy-900 text-sm">PhD (Viva Passed)</p>
+            <p class="text-xs text-navy-500">Dec 2025 · UniSZA</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 sm:py-20 bg-navy-900 text-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-serif text-3xl font-bold mb-4">Looking for an Experienced Education Leader?</h2>
+      <p class="text-navy-200 text-lg mb-8 leading-relaxed">
+        Dr. Hamidah retires from government service in March 2026 and is actively exploring leadership opportunities in Malaysia's private education sector. With her track record of transforming schools and published research, she's ready to make an impact.
+      </p>
+      <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 bg-gold-500 hover:bg-gold-600 text-navy-900 font-bold rounded-lg transition-colors text-lg">
+        Get in Touch →
+      </a>
+    </div>
+  </section>
+</BaseLayout>
