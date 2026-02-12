@@ -401,7 +401,7 @@ function Results({ answers }) {
       <div class="bg-navy-50 rounded-xl p-5 border border-navy-100 mb-8">
         <p class="text-xs text-navy-500 text-center">
           Based on the Resilient Leadership Index framework by Dr. Hamidah Che Abdul Hamid (UniSZA, 2025).<br />
-          Research: "Development of Mathematical Formulation of Resilient Leadership Index for Head Teachers' Leadership Model"
+          Research: "Resilient Leadership in Malaysian High-Performing Primary Schools"
         </p>
       </div>
 
