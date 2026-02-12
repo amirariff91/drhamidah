@@ -4,13 +4,15 @@ interface Props {
   description: string;
   canonical?: string;
   ogImage?: string;
+  ogType?: string;
   jsonLd?: object;
 }
 
-const { title, description, canonical, ogImage, jsonLd } = Astro.props;
+const { title, description, canonical, ogImage, ogType = 'website', jsonLd } = Astro.props;
 const siteUrl = 'https://drhamidah.cepathosting.com';
 const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).toString();
-const ogImg = ogImage || `${siteUrl}/og-default.jpg`;
+const ogImg = ogImage || `${siteUrl}/images/og-default.png`;
+const siteName = 'Dr. Hamidah Che Abdul Hamid';
 ---
 
 <!doctype html>
@@ -19,18 +21,25 @@ const ogImg = ogImage || `${siteUrl}/og-default.jpg`;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#102a43" />
+    <meta name="color-scheme" content="light" />
 
     <!-- Primary Meta -->
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
+    <meta name="author" content="Dr. Hamidah Che Abdul Hamid" />
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={siteName} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImg} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Dr. Hamidah Che Abdul Hamid — Education Leader & Researcher" />
     <meta property="og:locale" content="en_MY" />
 
     <!-- Twitter -->
@@ -38,6 +47,7 @@ const ogImg = ogImage || `${siteUrl}/og-default.jpg`;
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImg} />
+    <meta name="twitter:image:alt" content="Dr. Hamidah Che Abdul Hamid — Education Leader & Researcher" />
 
     <!-- Geo Meta -->
     <meta name="geo.region" content="MY-03" />
@@ -49,6 +59,7 @@ const ogImg = ogImage || `${siteUrl}/og-default.jpg`;
     <!-- Preload fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
     <!-- Person JSON-LD -->
@@ -57,44 +68,49 @@ const ogImg = ogImage || `${siteUrl}/og-default.jpg`;
     )}
   </head>
   <body class="bg-white text-navy-900 font-sans antialiased">
+    <!-- Skip Link -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-gold-500 focus:text-navy-900 focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold">
+      Skip to main content
+    </a>
+
     <!-- Navigation -->
-    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-navy-100">
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-navy-100" aria-label="Main navigation">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
-          <a href="/" class="font-serif text-xl font-bold text-navy-900 hover:text-gold-600 transition-colors">
+          <a href="/" class="font-serif text-xl font-bold text-navy-900 hover:text-gold-600 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-2 rounded">
             Dr. Hamidah
           </a>
           <div class="hidden sm:flex items-center space-x-8">
-            <a href="/" class="text-sm font-medium text-navy-600 hover:text-navy-900 transition-colors">Home</a>
-            <a href="/about" class="text-sm font-medium text-navy-600 hover:text-navy-900 transition-colors">About</a>
-            <a href="/portfolio" class="text-sm font-medium text-navy-600 hover:text-navy-900 transition-colors">Portfolio</a>
-            <a href="/research" class="text-sm font-medium text-navy-600 hover:text-navy-900 transition-colors">Research</a>
-            <a href="/assessment" class="text-sm font-medium text-gold-600 hover:text-gold-700 transition-colors">RLI Assessment</a>
-            <a href="/contact" class="text-sm font-medium text-white bg-navy-800 hover:bg-navy-700 px-4 py-2 rounded-lg transition-colors">Get in Touch</a>
+            <a href="/" class="text-sm font-medium text-navy-600 hover:text-navy-900 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-2 rounded">Home</a>
+            <a href="/about" class="text-sm font-medium text-navy-600 hover:text-navy-900 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-2 rounded">About</a>
+            <a href="/portfolio" class="text-sm font-medium text-navy-600 hover:text-navy-900 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-2 rounded">Portfolio</a>
+            <a href="/research" class="text-sm font-medium text-navy-600 hover:text-navy-900 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-2 rounded">Research</a>
+            <a href="/assessment" class="text-sm font-medium text-gold-600 hover:text-gold-700 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-2 rounded">RLI Assessment</a>
+            <a href="/contact" class="text-sm font-medium text-white bg-navy-800 hover:bg-navy-700 px-4 py-2 rounded-lg transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-2">Get in Touch</a>
           </div>
           <!-- Mobile menu button -->
-          <button id="mobile-menu-btn" class="sm:hidden p-2 rounded-md text-navy-600 hover:text-navy-900 hover:bg-navy-50" aria-label="Open menu">
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <button id="mobile-menu-btn" class="sm:hidden p-2 rounded-md text-navy-600 hover:text-navy-900 hover:bg-navy-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
         </div>
       </div>
       <!-- Mobile menu -->
-      <div id="mobile-menu" class="hidden sm:hidden border-t border-navy-100 bg-white">
+      <div id="mobile-menu" class="hidden sm:hidden border-t border-navy-100 bg-white" role="menu">
         <div class="px-4 py-3 space-y-2">
-          <a href="/" class="block py-2 text-sm font-medium text-navy-600 hover:text-navy-900">Home</a>
-          <a href="/about" class="block py-2 text-sm font-medium text-navy-600 hover:text-navy-900">About</a>
-          <a href="/portfolio" class="block py-2 text-sm font-medium text-navy-600 hover:text-navy-900">Portfolio</a>
-          <a href="/research" class="block py-2 text-sm font-medium text-navy-600 hover:text-navy-900">Research</a>
-          <a href="/assessment" class="block py-2 text-sm font-medium text-gold-600 hover:text-gold-700">RLI Assessment</a>
-          <a href="/contact" class="block py-2 text-sm font-medium text-white bg-navy-800 rounded-lg text-center">Get in Touch</a>
+          <a href="/" class="block py-2 text-sm font-medium text-navy-600 hover:text-navy-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 rounded" role="menuitem">Home</a>
+          <a href="/about" class="block py-2 text-sm font-medium text-navy-600 hover:text-navy-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 rounded" role="menuitem">About</a>
+          <a href="/portfolio" class="block py-2 text-sm font-medium text-navy-600 hover:text-navy-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 rounded" role="menuitem">Portfolio</a>
+          <a href="/research" class="block py-2 text-sm font-medium text-navy-600 hover:text-navy-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 rounded" role="menuitem">Research</a>
+          <a href="/assessment" class="block py-2 text-sm font-medium text-gold-600 hover:text-gold-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 rounded" role="menuitem">RLI Assessment</a>
+          <a href="/contact" class="block py-2 text-sm font-medium text-white bg-navy-800 rounded-lg text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500" role="menuitem">Get in Touch</a>
         </div>
       </div>
     </nav>
 
     <!-- Main content -->
-    <main>
+    <main id="main-content">
       <slot />
     </main>
 
@@ -136,8 +152,26 @@ const ogImg = ogImage || `${siteUrl}/og-default.jpg`;
       const btn = document.getElementById('mobile-menu-btn');
       const menu = document.getElementById('mobile-menu');
       btn?.addEventListener('click', () => {
+        const isOpen = !menu?.classList.contains('hidden');
         menu?.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', String(!isOpen));
       });
     </script>
+
+    <!-- Reduced motion + global focus styles -->
+    <style is:global>
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+      /* Tabular nums for data */
+      .tabular-nums { font-variant-numeric: tabular-nums; }
+      /* Balanced headings */
+      h1, h2, h3 { text-wrap: balance; }
+    </style>
   </body>
 </html>

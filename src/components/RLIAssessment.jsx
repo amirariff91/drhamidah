@@ -146,7 +146,7 @@ function ProgressBar({ current, total }) {
       </div>
       <div class="h-2 bg-navy-100 rounded-full overflow-hidden">
         <div
-          class="h-full bg-gradient-to-r from-gold-400 to-gold-600 rounded-full transition-all duration-500 ease-out"
+          class="h-full bg-gradient-to-r from-gold-400 to-gold-600 rounded-full transition-[width] duration-500 ease-out"
           style={{ width: `${pct}%` }}
         />
       </div>
@@ -159,7 +159,7 @@ function QuestionCard({ question, questionIndex, answer, onAnswer }) {
   return (
     <div class="animate-fadeIn">
       <div class="flex items-center gap-2 mb-4">
-        <span class="text-xl">{dim.icon}</span>
+        <span class="text-xl" aria-hidden="true">{dim.icon}</span>
         <span class="text-sm font-medium uppercase tracking-wider" style={{ color: dim.color }}>{dim.name}</span>
       </div>
       <h3 class="font-serif text-xl sm:text-2xl font-bold text-navy-900 mb-8 leading-relaxed">{question.text}</h3>
@@ -168,13 +168,16 @@ function QuestionCard({ question, questionIndex, answer, onAnswer }) {
           <button
             key={opt.value}
             onClick={() => onAnswer(questionIndex, opt.value)}
-            class={`group flex flex-col items-center p-3 sm:p-4 rounded-xl border-2 transition-all duration-200 ${
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onAnswer(questionIndex, opt.value); } }}
+            aria-label={`${opt.value} — ${opt.label}`}
+            aria-pressed={answer === opt.value}
+            class={`group flex flex-col items-center p-3 sm:p-4 rounded-xl border-2 transition-[border-color,background-color,box-shadow] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-2 touch-action-manipulation ${
               answer === opt.value
                 ? 'border-gold-500 bg-gold-50 shadow-md shadow-gold-200/50'
                 : 'border-navy-100 bg-white hover:border-navy-300 hover:bg-navy-50'
             }`}
           >
-            <span class={`text-lg sm:text-2xl font-bold mb-1 ${answer === opt.value ? 'text-gold-600' : 'text-navy-400 group-hover:text-navy-600'}`}>
+            <span class={`text-lg sm:text-2xl font-bold mb-1 tabular-nums ${answer === opt.value ? 'text-gold-600' : 'text-navy-400 group-hover:text-navy-600'}`}>
               {opt.value}
             </span>
             <span class="text-xs text-navy-500 text-center hidden sm:block">{opt.label}</span>
@@ -215,7 +218,7 @@ function GaugeMeter({ score, maxScore }) {
             stroke-dasharray={circumference}
             stroke-dashoffset={offset}
             stroke-linecap="round"
-            class="transition-all duration-1000 ease-out"
+            class="transition-[stroke-dashoffset] duration-1000 ease-out"
           />
         </svg>
         <div class="absolute inset-0 flex flex-col items-center justify-center">
@@ -241,13 +244,13 @@ function DimensionBar({ dimension, scores, index }) {
   return (
     <div class="bg-white rounded-xl p-5 border border-navy-100">
       <div class="flex items-center gap-2 mb-2">
-        <span class="text-lg">{dimension.icon}</span>
+        <span class="text-lg" aria-hidden="true">{dimension.icon}</span>
         <h4 class="font-semibold text-navy-900">{dimension.name}</h4>
-        <span class="ml-auto font-bold text-navy-900">{total}/{max}</span>
+        <span class="ml-auto font-bold text-navy-900 tabular-nums">{total}/{max}</span>
       </div>
       <div class="h-3 bg-navy-100 rounded-full overflow-hidden mb-3">
         <div
-          class="h-full rounded-full transition-all duration-700 ease-out"
+          class="h-full rounded-full transition-[width] duration-700 ease-out"
           style={{ width: `${pct}%`, backgroundColor: dimension.color }}
         />
       </div>
@@ -301,7 +304,7 @@ function Results({ answers }) {
         <p class="text-navy-200 mb-6">Dr. Hamidah brings 30 years of school leadership experience and published research on building resilience in educational leaders.</p>
         <a
           href="/contact"
-          class="inline-flex items-center justify-center px-8 py-4 bg-gold-500 hover:bg-gold-600 text-navy-900 font-bold rounded-lg transition-all hover:shadow-lg hover:shadow-gold-500/25 text-lg"
+          class="inline-flex items-center justify-center px-8 py-4 bg-gold-500 hover:bg-gold-600 text-navy-900 font-bold rounded-lg transition-[background-color,box-shadow] duration-200 hover:shadow-lg hover:shadow-gold-500/25 text-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-2"
         >
           Contact Dr. Hamidah →
         </a>
@@ -374,7 +377,7 @@ export default function RLIAssessment() {
         <button
           onClick={handleBack}
           disabled={currentQ === 0}
-          class={`px-5 py-2 rounded-lg text-sm font-medium transition-colors ${
+          class={`px-5 py-2 rounded-lg text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-2 ${
             currentQ === 0
               ? 'text-navy-300 cursor-not-allowed'
               : 'text-navy-600 hover:text-navy-900 hover:bg-navy-50'
@@ -386,7 +389,7 @@ export default function RLIAssessment() {
           <button
             onClick={handleFinish}
             disabled={!allAnswered}
-            class={`px-6 py-3 rounded-lg font-semibold transition-all ${
+            class={`px-6 py-3 rounded-lg font-semibold transition-[background-color,box-shadow] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-2 ${
               allAnswered
                 ? 'bg-gold-500 hover:bg-gold-600 text-navy-900 shadow-md hover:shadow-lg'
                 : 'bg-navy-100 text-navy-400 cursor-not-allowed'
@@ -398,7 +401,7 @@ export default function RLIAssessment() {
           <button
             onClick={() => setCurrentQ(currentQ + 1)}
             disabled={!answers[currentQ]}
-            class={`px-5 py-2 rounded-lg text-sm font-medium transition-colors ${
+            class={`px-5 py-2 rounded-lg text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-2 ${
               answers[currentQ]
                 ? 'text-navy-600 hover:text-navy-900 hover:bg-navy-50'
                 : 'text-navy-300 cursor-not-allowed'
