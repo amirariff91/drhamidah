@@ -9,7 +9,7 @@ interface Props {
 }
 
 const { title, description, canonical, ogImage, ogType = 'website', jsonLd } = Astro.props;
-const siteUrl = 'https://drhamidah.cepathosting.com';
+const siteUrl = 'https://drhamidah.com';
 const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).toString();
 const ogImg = ogImage || `${siteUrl}/images/og-default.png`;
 const siteName = 'Dr. Hamidah Che Abdul Hamid';

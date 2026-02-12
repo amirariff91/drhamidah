@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://drhamidah.cepathosting.com/sitemap-index.xml
+Sitemap: https://drhamidah.com/sitemap-index.xml
 
 # AI Crawlers - Welcome
 User-agent: GPTBot

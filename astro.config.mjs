@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import preact from '@astrojs/preact';
 
 export default defineConfig({
-  site: 'https://drhamidah.cepathosting.com',
+  site: 'https://drhamidah.com',
   integrations: [tailwind(), sitemap(), preact()],
   compressHTML: true,
   trailingSlash: 'always',
