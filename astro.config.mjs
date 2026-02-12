@@ -7,4 +7,8 @@ export default defineConfig({
   site: 'https://drhamidah.cepathosting.com',
   integrations: [tailwind(), sitemap(), preact()],
   compressHTML: true,
+  trailingSlash: 'always',
+  build: {
+    format: 'directory',
+  },
 });
