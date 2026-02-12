@@ -149,8 +149,12 @@ const heroStats = [
   </section>
 
   <!-- Quote -->
-  <section class="py-12 bg-navy-900">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+  <section class="py-14 bg-gradient-to-br from-navy-800 to-navy-900 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute top-0 left-1/4 w-40 h-40 bg-gold-400 rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <svg class="w-10 h-10 text-gold-500/40 mx-auto mb-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C9.591 11.686 11 13.178 11 15c0 1.933-1.567 3.5-3.5 3.5-1.185 0-2.235-.59-2.917-1.679zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C19.591 11.686 21 13.178 21 15c0 1.933-1.567 3.5-3.5 3.5-1.185 0-2.235-.59-2.917-1.679z"/></svg>
       <blockquote class="font-serif text-xl sm:text-2xl text-white leading-relaxed italic mb-6">
         "Resiliency is an absolute must to keep people engaged, passionate, and&nbsp;committed."
       </blockquote>
@@ -397,6 +401,51 @@ const heroStats = [
           </div>
           <p class="text-sm text-navy-600">Resilient Leadership Index — a mathematical framework for measuring school leader resilience.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 sm:py-20 bg-navy-50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-serif text-3xl font-bold text-navy-900 mb-3 text-center">Common Questions</h2>
+      <p class="text-navy-500 text-center mb-10">What schools typically ask before reaching out.</p>
+      <div class="space-y-4">
+        <details class="group bg-white rounded-xl border border-navy-100 overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-navy-50/50 transition-colors font-semibold text-navy-900 text-sm list-none [&::-webkit-details-marker]:hidden">
+            Why is she leaving government service?
+            <svg class="w-5 h-5 text-navy-400 transition-transform duration-200 group-open:rotate-180 flex-shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-navy-600">Mandatory retirement at 60. She's not leaving — she's graduating from 30 years of public service. And she's choosing to keep leading, not stop.</div>
+        </details>
+        <details class="group bg-white rounded-xl border border-navy-100 overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-navy-50/50 transition-colors font-semibold text-navy-900 text-sm list-none [&::-webkit-details-marker]:hidden">
+            Can she adapt to private school culture?
+            <svg class="w-5 h-5 text-navy-400 transition-transform duration-200 group-open:rotate-180 flex-shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-navy-600">Her Diploma in Banking Studies means she thinks like a business operator, not just an educator. She's managed budgets, parent expectations, and stakeholder relationships at scale — skills that translate directly to private education.</div>
+        </details>
+        <details class="group bg-white rounded-xl border border-navy-100 overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-navy-50/50 transition-colors font-semibold text-navy-900 text-sm list-none [&::-webkit-details-marker]:hidden">
+            Is she open to relocating?
+            <svg class="w-5 h-5 text-navy-400 transition-transform duration-200 group-open:rotate-180 flex-shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-navy-600">Yes. She has family accommodation in the Shah Alam / Elmina area and is fully prepared to relocate to KL/Selangor for the right opportunity.</div>
+        </details>
+        <details class="group bg-white rounded-xl border border-navy-100 overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-navy-50/50 transition-colors font-semibold text-navy-900 text-sm list-none [&::-webkit-details-marker]:hidden">
+            What's her English proficiency like?
+            <svg class="w-5 h-5 text-navy-400 transition-transform duration-200 group-open:rotate-180 flex-shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-navy-600">BA in English Literature (UPM) + Master in TESL (UiTM) + 9 years teaching English. She's published academic papers in English. This isn't conversational fluency — it's professional-grade bilingual capability.</div>
+        </details>
+        <details class="group bg-white rounded-xl border border-navy-100 overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-navy-50/50 transition-colors font-semibold text-navy-900 text-sm list-none [&::-webkit-details-marker]:hidden">
+            When exactly is she available?
+            <svg class="w-5 h-5 text-navy-400 transition-transform duration-200 group-open:rotate-180 flex-shrink-0 ml-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="px-5 pb-5 text-sm text-navy-600">March 2026. She's open to conversations now and can start immediately after her retirement date.</div>
+        </details>
       </div>
     </div>
   </section>
