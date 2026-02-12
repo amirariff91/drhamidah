@@ -1,31 +1,127 @@
 import { useState, useCallback } from 'preact/hooks';
 
+// SVG Icon components for dimensions
+function ShieldIcon({ className }) {
+  return (
+    <svg class={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .6-.92l7-3.11a1 1 0 0 1 .8 0l7 3.11A1 1 0 0 1 20 6z"/>
+    </svg>
+  );
+}
+
+function SunIcon({ className }) {
+  return (
+    <svg class={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+    </svg>
+  );
+}
+
+function TargetIcon({ className }) {
+  return (
+    <svg class={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+    </svg>
+  );
+}
+
+function UsersIcon({ className }) {
+  return (
+    <svg class={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+    </svg>
+  );
+}
+
+function LightbulbIcon({ className }) {
+  return (
+    <svg class={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/>
+    </svg>
+  );
+}
+
+// Interpretation level icons
+function SproutIcon({ className }) {
+  return (
+    <svg class={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/>
+    </svg>
+  );
+}
+
+function LeafIcon({ className }) {
+  return (
+    <svg class={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 20 .5 20 .5s-1.2 8-5.5 12.5c-1.5 1.5-3 2.5-3.5 7z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+    </svg>
+  );
+}
+
+function TreePineIcon({ className }) {
+  return (
+    <svg class={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14l-3-3.3a1 1 0 0 1 .7-1.7h4.6L7 6a1 1 0 0 1 .7-1.7h8.6A1 1 0 0 1 17 6l-2.3 3h4.6a1 1 0 0 1 .7 1.7z"/><path d="M12 22v-3"/>
+    </svg>
+  );
+}
+
+function MountainIcon({ className }) {
+  return (
+    <svg class={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="m8 3 4 8 5-5 5 15H2L8 3z"/><path d="M4.14 15.08c2.62-1.57 5.24-1.43 7.86.42 2.74 1.94 5.49 2 8.23.19"/>
+    </svg>
+  );
+}
+
+// Dimension icon renderer
+function DimensionIcon({ type, className }) {
+  switch (type) {
+    case 'shield': return <ShieldIcon className={className} />;
+    case 'sun': return <SunIcon className={className} />;
+    case 'target': return <TargetIcon className={className} />;
+    case 'users': return <UsersIcon className={className} />;
+    default: return null;
+  }
+}
+
+// Interpretation icon renderer
+function InterpretationIcon({ type, className }) {
+  switch (type) {
+    case 'sprout': return <SproutIcon className={className} />;
+    case 'leaf': return <LeafIcon className={className} />;
+    case 'tree': return <TreePineIcon className={className} />;
+    case 'mountain': return <MountainIcon className={className} />;
+    default: return null;
+  }
+}
+
 const DIMENSIONS = [
   {
     id: 'courage',
     name: 'Courage & Challenge',
-    icon: '🛡️',
+    iconType: 'shield',
     color: '#f0b429',
     description: 'Your ability to face adversity, take calculated risks, and support others through challenges.',
   },
   {
     id: 'mindset',
     name: 'Positive Mindset',
-    icon: '🌟',
+    iconType: 'sun',
     color: '#38a169',
     description: 'Your capacity for optimism, growth orientation, and viewing stress as an opportunity.',
   },
   {
     id: 'focus',
     name: 'Focus & Commitment',
-    icon: '🎯',
+    iconType: 'target',
     color: '#627d98',
     description: 'Your strength in managing distractions, persisting toward goals, and sustaining productive work.',
   },
   {
     id: 'community',
     name: 'Community & Support',
-    icon: '🤝',
+    iconType: 'users',
     color: '#102a43',
     description: 'Your effectiveness in building teams, engaging parents, and nurturing stakeholder relationships.',
   },
@@ -95,10 +191,10 @@ const LIKERT_OPTIONS = [
 ];
 
 function getInterpretation(score) {
-  if (score <= 24) return { level: 'Developing', color: '#627d98', emoji: '🌱', text: 'Your resilience leadership is in the developing stage. This is a starting point — every exceptional leader began here. Focus on building foundational habits around self-awareness and seeking support.' };
-  if (score <= 36) return { level: 'Moderate', color: '#f0b429', emoji: '🌿', text: 'You show moderate resilience in your leadership. You have a solid foundation but there are specific areas where targeted development could significantly strengthen your leadership capacity.' };
-  if (score <= 48) return { level: 'Strong', color: '#38a169', emoji: '🌳', text: 'You demonstrate strong resilient leadership. You handle challenges well and support others effectively. Fine-tuning specific dimensions could help you move from strong to exceptional.' };
-  return { level: 'Exceptional', color: '#102a43', emoji: '🏔️', text: 'Your resilient leadership is exceptional. You embody the qualities found in Malaysia\'s highest-performing headteachers. Consider mentoring others and sharing your resilience strategies.' };
+  if (score <= 24) return { level: 'Developing', color: '#627d98', iconType: 'sprout', text: 'Your resilience leadership is in the developing stage. This is a starting point — every exceptional leader began here. Focus on building foundational habits around self-awareness and seeking support.' };
+  if (score <= 36) return { level: 'Moderate', color: '#f0b429', iconType: 'leaf', text: 'You show moderate resilience in your leadership. You have a solid foundation but there are specific areas where targeted development could significantly strengthen your leadership capacity.' };
+  if (score <= 48) return { level: 'Strong', color: '#38a169', iconType: 'tree', text: 'You demonstrate strong resilient leadership. You handle challenges well and support others effectively. Fine-tuning specific dimensions could help you move from strong to exceptional.' };
+  return { level: 'Exceptional', color: '#102a43', iconType: 'mountain', text: 'Your resilient leadership is exceptional. You embody the qualities found in Malaysia\'s highest-performing headteachers. Consider mentoring others and sharing your resilience strategies.' };
 }
 
 function getDimensionRecommendation(dimIndex, avg) {
@@ -159,7 +255,9 @@ function QuestionCard({ question, questionIndex, answer, onAnswer }) {
   return (
     <div class="animate-fadeIn">
       <div class="flex items-center gap-2 mb-4">
-        <span class="text-xl" aria-hidden="true">{dim.icon}</span>
+        <span style={{ color: dim.color }} aria-hidden="true">
+          <DimensionIcon type={dim.iconType} className="w-5 h-5" />
+        </span>
         <span class="text-sm font-medium uppercase tracking-wider" style={{ color: dim.color }}>{dim.name}</span>
       </div>
       <h3 class="font-serif text-xl sm:text-2xl font-bold text-navy-900 mb-8 leading-relaxed">{question.text}</h3>
@@ -227,7 +325,9 @@ function GaugeMeter({ score, maxScore }) {
         </div>
       </div>
       <div class="text-center mt-2">
-        <span class="text-3xl">{interp.emoji}</span>
+        <span style={{ color: interp.color }} aria-hidden="true">
+          <InterpretationIcon type={interp.iconType} className="w-8 h-8 mx-auto" />
+        </span>
         <p class="font-serif text-2xl font-bold mt-2" style={{ color: interp.color }}>{interp.level} Resilience</p>
       </div>
     </div>
@@ -244,7 +344,9 @@ function DimensionBar({ dimension, scores, index }) {
   return (
     <div class="bg-white rounded-xl p-5 border border-navy-100">
       <div class="flex items-center gap-2 mb-2">
-        <span class="text-lg" aria-hidden="true">{dimension.icon}</span>
+        <span style={{ color: dimension.color }} aria-hidden="true">
+          <DimensionIcon type={dimension.iconType} className="w-5 h-5" />
+        </span>
         <h4 class="font-semibold text-navy-900">{dimension.name}</h4>
         <span class="ml-auto font-bold text-navy-900 tabular-nums">{total}/{max}</span>
       </div>
@@ -256,7 +358,12 @@ function DimensionBar({ dimension, scores, index }) {
       </div>
       <p class="text-sm text-navy-600 mb-2">{dimension.description}</p>
       <div class="mt-3 p-3 bg-navy-50 rounded-lg">
-        <p class="text-sm text-navy-700"><strong>💡 Recommendation:</strong> {getDimensionRecommendation(index, avg)}</p>
+        <p class="text-sm text-navy-700 flex items-start gap-1.5">
+          <span class="text-gold-600 flex-shrink-0 mt-0.5" aria-hidden="true">
+            <LightbulbIcon className="w-4 h-4" />
+          </span>
+          <span><strong>Recommendation:</strong> {getDimensionRecommendation(index, avg)}</span>
+        </p>
       </div>
     </div>
   );
@@ -314,7 +421,7 @@ function Results({ answers }) {
       <div class="text-center mt-8">
         <button
           onClick={() => window.location.reload()}
-          class="text-navy-500 hover:text-navy-700 text-sm font-medium transition-colors"
+          class="text-navy-500 hover:text-navy-700 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-2 rounded"
         >
           ↻ Take the Assessment Again
         </button>
