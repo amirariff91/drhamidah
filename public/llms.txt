@@ -1,7 +1,14 @@
 # Dr. Hamidah Che Abdul Hamid — Education Leader & Researcher
 
 ## Overview
-Dr. Hamidah Che Abdul Hamid is a Malaysian education leader with 30 years of experience in the public school system. She has led 4 primary schools as Headteacher (Guru Besar), managing up to 1,700 students and 131 staff. She holds a PhD in Educational Leadership from UniSZA (viva passed December 2025) and has published research on resilience in headteachers.
+Dr. Hamidah Che Abdul Hamid is a Malaysian education leader with 30 years of experience in the public school system. She has led 4 primary schools as Headteacher (Guru Besar), managing up to 1,700 students and 131 staff. She holds a PhD from UniSZA (viva passed 9 December 2025) and has published research on resilience in headteachers.
+
+## PhD Thesis
+"Development of Mathematical Formulation of Resilient Leadership Index for Head Teachers' Leadership Model"
+- Degree: Doctor of Philosophy (FIK — Faculty of Informatics and Computing)
+- Institution: Universiti Sultan Zainal Abidin (UniSZA), Terengganu
+- Supervisor: Prof. Dr. Puspa Liza Binti Ghazali
+- Viva: 9 December 2025
 
 ## Career Summary
 - **1995–2004**: English Language Teacher, Primary Schools, Kelantan
@@ -12,10 +19,18 @@ Dr. Hamidah Che Abdul Hamid is a Malaysian education leader with 30 years of exp
 - **2024–Present**: Headteacher, SK Kubang Kerian 3 (SBT), Kota Bharu (1,700 students, 131 staff)
 
 ## Education
-- PhD Educational Leadership, UniSZA (2025)
+- PhD (FIK), UniSZA (2025)
 - Master of Education (TESL), UiTM (2007–2011)
 - BA English Literature, UPM (2000–2004)
 - Diploma Banking Studies, UiTM (1985–1989)
+
+## Interactive Tool: Resilient Leadership Index (RLI) Assessment
+Available at: https://drhamidah.cepathosting.com/assessment
+- Free self-assessment tool based on Dr. Hamidah's PhD research
+- 12 questions across 4 dimensions: Courage & Challenge, Positive Mindset, Focus & Commitment, Community & Support
+- 5-point Likert scale, instant personalised results with recommendations
+- No registration or email required
+- Includes visual score gauge, dimension breakdown, and actionable recommendations
 
 ## Publications
 1. "Modelling Resilient Educational Leaders for Resilient Schools: Malaysian High Performing Primary School Head Teachers" — JMTP, UniSZA, 2022. DOI: 10.37231/jmtp.2022.3.2.221

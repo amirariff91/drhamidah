@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import RLIAssessment from '../components/RLIAssessment.jsx';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Resilient Leadership Index — Self-Assessment Tool",
+  "description": "Free self-assessment tool for school leaders based on PhD research by Dr. Hamidah Che Abdul Hamid. Measure your resilience across 4 dimensions: Courage, Mindset, Focus, and Community.",
+  "url": "https://drhamidah.cepathosting.com/assessment",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Web Browser",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "MYR" },
+  "author": {
+    "@type": "Person",
+    "name": "Dr. Hamidah Che Abdul Hamid",
+    "affiliation": { "@type": "CollegeOrUniversity", "name": "Universiti Sultan Zainal Abidin (UniSZA)" }
+  }
+};
+---
+
+<BaseLayout
+  title="Resilient Leadership Index — Free Self-Assessment for School Leaders"
+  description="Take the free Resilient Leadership Index self-assessment. Based on PhD research by Dr. Hamidah Che Abdul Hamid at UniSZA. 12 questions, 4 dimensions, instant personalised results."
+  jsonLd={jsonLd}
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 text-white py-12 sm:py-16">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="inline-block bg-gold-500/20 text-gold-400 text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider border border-gold-500/30">Free Research-Based Tool</span>
+      <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Resilient Leadership Index</h1>
+      <p class="text-lg sm:text-xl text-navy-200 max-w-2xl mx-auto mb-2">
+        How resilient is your leadership? Discover your strengths and growth areas across 4 key dimensions.
+      </p>
+      <p class="text-sm text-navy-400">12 questions · 3 minutes · Instant personalised results · No email required</p>
+    </div>
+  </section>
+
+  <!-- Assessment Section -->
+  <section class="py-12 sm:py-16 bg-gradient-to-b from-navy-50 to-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <RLIAssessment client:load />
+    </div>
+  </section>
+
+  <!-- About This Tool -->
+  <section class="py-12 bg-white border-t border-navy-100">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-serif text-2xl font-bold text-navy-900 mb-6 text-center">About This Assessment</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div class="p-5 rounded-xl bg-navy-50 border border-navy-100">
+          <h3 class="font-semibold text-navy-900 mb-2">📚 Research-Based</h3>
+          <p class="text-sm text-navy-600">Built on the Resilient Leadership Index framework from Dr. Hamidah's doctoral research at UniSZA, studying headteachers in Malaysia's high-performing primary schools.</p>
+        </div>
+        <div class="p-5 rounded-xl bg-navy-50 border border-navy-100">
+          <h3 class="font-semibold text-navy-900 mb-2">🎯 4 Dimensions</h3>
+          <p class="text-sm text-navy-600">Measures Courage & Challenge, Positive Mindset, Focus & Commitment, and Community & Support — the pillars of resilient school leadership.</p>
+        </div>
+        <div class="p-5 rounded-xl bg-navy-50 border border-navy-100">
+          <h3 class="font-semibold text-navy-900 mb-2">💡 Actionable Insights</h3>
+          <p class="text-sm text-navy-600">Receive personalised recommendations for each dimension, helping you identify specific areas for leadership development.</p>
+        </div>
+        <div class="p-5 rounded-xl bg-navy-50 border border-navy-100">
+          <h3 class="font-semibold text-navy-900 mb-2">🔓 Completely Free</h3>
+          <p class="text-sm text-navy-600">No email required, no paywall, no registration. This tool is shared freely to support school leaders everywhere.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style is:global>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fadeIn {
+    animation: fadeIn 0.4s ease-out;
+  }
+</style>

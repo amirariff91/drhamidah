@@ -53,24 +53,33 @@ const jsonLd = {
       <div class="absolute bottom-10 left-10 w-96 h-96 bg-sage-400 rounded-full blur-3xl"></div>
     </div>
     <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
-      <div class="max-w-3xl">
-        <p class="text-gold-400 font-medium text-sm uppercase tracking-widest mb-4">Education Leader · Researcher · School Transformation Expert</p>
-        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-          Dr. Hamidah<br />Che Abdul Hamid
-        </h1>
-        <p class="text-xl sm:text-2xl text-navy-200 leading-relaxed mb-4">
-          30 years of transforming Malaysian schools — from a rural school of 250 students to leading one of Kelantan's largest High-Performance Schools with <strong class="text-white">1,700 students</strong>.
-        </p>
-        <p class="text-lg text-navy-300 mb-8">
-          PhD researcher in educational leadership and resilience. Published author. Now ready for the next chapter.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/contact" class="inline-flex items-center justify-center px-6 py-3 bg-gold-500 hover:bg-gold-600 text-navy-900 font-semibold rounded-lg transition-colors text-center">
-            Discuss an Opportunity →
-          </a>
-          <a href="/portfolio" class="inline-flex items-center justify-center px-6 py-3 border-2 border-navy-400 hover:border-white text-white font-medium rounded-lg transition-colors text-center">
-            View Portfolio
-          </a>
+      <div class="flex flex-col md:flex-row items-center gap-10">
+        <!-- Headshot -->
+        <div class="flex-shrink-0">
+          <div class="w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden border-4 border-gold-400 shadow-2xl shadow-gold-400/20">
+            <img src="/images/hamidah-headshot.jpg" alt="Dr. Hamidah Che Abdul Hamid" class="w-full h-full object-cover" width="400" height="400" loading="eager" />
+          </div>
+        </div>
+        <!-- Text -->
+        <div class="max-w-3xl text-center md:text-left">
+          <p class="text-gold-400 font-medium text-sm uppercase tracking-widest mb-4">Education Leader · Researcher · School Transformation Expert</p>
+          <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            Dr. Hamidah<br />Che Abdul Hamid
+          </h1>
+          <p class="text-xl sm:text-2xl text-navy-200 leading-relaxed mb-4">
+            30 years of transforming Malaysian schools — from a rural school of 250 students to leading one of Kelantan's largest High-Performance Schools with <strong class="text-white">1,700 students</strong>.
+          </p>
+          <p class="text-lg text-navy-300 mb-8">
+            PhD researcher in educational leadership and resilience. Published author. Now ready for the next chapter.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <a href="/contact" class="inline-flex items-center justify-center px-6 py-3 bg-gold-500 hover:bg-gold-600 text-navy-900 font-semibold rounded-lg transition-all hover:shadow-lg hover:shadow-gold-500/25 text-center">
+              Discuss an Opportunity →
+            </a>
+            <a href="/portfolio" class="inline-flex items-center justify-center px-6 py-3 border-2 border-navy-400 hover:border-white text-white font-medium rounded-lg transition-all text-center">
+              View Portfolio
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -108,7 +117,7 @@ const jsonLd = {
 
       <div class="grid md:grid-cols-2 gap-6">
         <!-- School 1 -->
-        <div class="bg-white rounded-xl p-6 shadow-sm border border-navy-100 hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-navy-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
           <div class="flex items-start justify-between mb-3">
             <span class="text-xs font-medium text-navy-400 uppercase tracking-wider">2024 – Present</span>
             <span class="bg-gold-100 text-gold-700 text-xs font-bold px-2 py-1 rounded">Current</span>
@@ -119,7 +128,7 @@ const jsonLd = {
         </div>
 
         <!-- School 2 -->
-        <div class="bg-white rounded-xl p-6 shadow-sm border border-navy-100 hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-navy-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
           <div class="flex items-start justify-between mb-3">
             <span class="text-xs font-medium text-navy-400 uppercase tracking-wider">2018 – 2024</span>
           </div>
@@ -129,7 +138,7 @@ const jsonLd = {
         </div>
 
         <!-- School 3 -->
-        <div class="bg-white rounded-xl p-6 shadow-sm border border-navy-100 hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-navy-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
           <div class="flex items-start justify-between mb-3">
             <span class="text-xs font-medium text-navy-400 uppercase tracking-wider">2016 – 2018</span>
             <span class="bg-sage-100 text-sage-700 text-xs font-bold px-2 py-1 rounded">300% Growth</span>
@@ -140,7 +149,7 @@ const jsonLd = {
         </div>
 
         <!-- School 4 -->
-        <div class="bg-white rounded-xl p-6 shadow-sm border border-navy-100 hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-navy-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
           <div class="flex items-start justify-between mb-3">
             <span class="text-xs font-medium text-navy-400 uppercase tracking-wider">2014 – 2016</span>
             <span class="bg-gold-100 text-gold-700 text-xs font-bold px-2 py-1 rounded">National Award</span>
@@ -166,10 +175,10 @@ const jsonLd = {
         <div class="md:w-1/2 mb-8 md:mb-0">
           <h2 class="font-serif text-3xl font-bold text-navy-900 mb-4">Published Researcher in Educational Resilience</h2>
           <p class="text-navy-600 leading-relaxed mb-4">
-            Her PhD research at UniSZA explores how headteachers in Malaysia's high-performing schools build and sustain resilience — turning adversity into school-wide strength.
+            Her PhD research at UniSZA developed a mathematical formulation of the Resilient Leadership Index for headteachers — turning the study of resilience into a measurable framework for school leaders.
           </p>
           <p class="text-navy-600 leading-relaxed mb-6">
-            With 3 published papers and a PhD viva passed in December 2025, Dr. Hamidah bridges the gap between academic theory and real-world school leadership.
+            With 3 published papers and a PhD viva passed on 9 December 2025, Dr. Hamidah bridges the gap between academic theory and real-world school leadership.
           </p>
           <a href="/research" class="inline-flex items-center text-navy-700 font-medium hover:text-gold-600 transition-colors">
             View Publications →
@@ -182,6 +191,42 @@ const jsonLd = {
             <p class="text-xs text-navy-500 mb-4">Journal of Management Theory and Practice (JMTP), UniSZA, 2022</p>
             <p class="text-sm text-navy-600 mb-4">Explores how high-performing headteachers develop resilience during adversity, including the COVID-19 pandemic, through semi-structured interviews with 7 headteachers and 2 education experts across Malaysia.</p>
             <a href="https://doi.org/10.37231/jmtp.2022.3.2.221" target="_blank" rel="noopener" class="text-sm text-gold-600 hover:text-gold-700 font-medium">Read Paper →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RLI Assessment Banner -->
+  <section class="py-16 sm:py-20 bg-gradient-to-br from-gold-50 via-white to-sage-50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="relative bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 rounded-2xl p-8 sm:p-12 overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+          <div class="absolute top-0 right-0 w-64 h-64 bg-gold-400 rounded-full blur-3xl"></div>
+          <div class="absolute bottom-0 left-0 w-48 h-48 bg-sage-400 rounded-full blur-3xl"></div>
+        </div>
+        <div class="relative md:flex md:items-center md:gap-10">
+          <div class="md:w-2/3 mb-8 md:mb-0">
+            <span class="inline-block bg-gold-500 text-navy-900 text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">Free Tool · Based on PhD Research</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">How Resilient Is Your Leadership?</h2>
+            <p class="text-navy-200 text-lg leading-relaxed mb-2">
+              Take the <strong class="text-white">Resilient Leadership Index</strong> — a free self-assessment tool based on Dr. Hamidah's doctoral research at UniSZA.
+            </p>
+            <p class="text-navy-300 mb-6">12 questions · 4 dimensions · Instant personalised results · No email required</p>
+            <a href="/assessment" class="inline-flex items-center justify-center px-8 py-4 bg-gold-500 hover:bg-gold-600 text-navy-900 font-bold rounded-lg transition-all hover:shadow-lg hover:shadow-gold-500/25 text-lg">
+              Take the Assessment →
+            </a>
+          </div>
+          <div class="md:w-1/3 flex justify-center">
+            <div class="text-center">
+              <div class="inline-flex items-center justify-center w-32 h-32 rounded-full bg-gradient-to-br from-gold-400 to-gold-600 text-navy-900 mb-3">
+                <div>
+                  <p class="text-3xl font-bold font-serif">RLI</p>
+                  <p class="text-xs font-medium">Score</p>
+                </div>
+              </div>
+              <p class="text-navy-300 text-sm">Discover your resilience profile</p>
+            </div>
           </div>
         </div>
       </div>
